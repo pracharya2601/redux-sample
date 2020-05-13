@@ -4,32 +4,36 @@ import { combineReducers } from "redux";
 const songsReducer = () => {
     return[
         {
-            title: 'hello',
-            duration: '4:05'
+            title: 'Physical',
+            artist: 'Dua Lipa',
+            duration: '4:03'
         },
         {
-            title: 'hello hello ',
-            duration: '10:05'
+            title: 'Life Is Good',
+            artist: 'Future/ Drake',
+            duration: '4:03'
         },
         {
-            title: 'hello hello',
-            duration: '14:05'
+            title: 'No Time To Die',
+            artist: 'Billie Eilish',
+            duration: '5.00'
         },
         {
-            title: 'hello hello hello hi',
-            duration: '8:05'
+            title: 'In your eyes',
+            artist: 'The Weeknd',
+            duration: '4:03'
         }
     ];
 };
 
-const selectedSongReducer = (selectedSong=null, action) => {
+const selectSongReducer = (selectSong=null, action) => {
     if(action.type === 'SONG_SELECTED') {
         return action.payload;
     }
-    return selectedSong;
+    return selectSong;
 }
 
 export default combineReducers({
     songs: songsReducer,
-    selectedSong: selectedSongReducer
+    selectSong: selectSongReducer
 })
